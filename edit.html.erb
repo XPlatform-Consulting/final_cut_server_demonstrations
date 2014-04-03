@@ -1,0 +1,17 @@
+<% form_for( :final_cut_server_demonstration, @final_cut_server_demonstration, :url=> { :controller=>'actions', :action=>'update' },  :html => { :id => 'edit_action' } ) do |f| %>
+  <%= f.error_messages %>
+
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </li>
+  <li>
+    <%= f.label :comments %>
+    <%= f.text_area :comments, :rows => 3 %>
+  </li>
+  <li>
+    <%= f.label 'Operation'%>
+    <%= select_tag('final_cut_server_demonstration[operation]', options_for_select(FinalCutServerDemonstration::OPERATION_LIST, @final_cut_server_demonstration.operation)) %>
+  </li>
+
+<% end %>
